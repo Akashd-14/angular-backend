@@ -15,7 +15,7 @@ pipeline {
         stage('Create Docker Image') {
             steps {
                 sh '''
-                docker build -t . akashdakave05/angular-backend:latest
+                docker build . -t akashdakave05/angular-backend:latest
                 docker push akashdakave05/angular-backend:latest
                 docker rmi akashdakave05/angular-backend:latest'''
             }
