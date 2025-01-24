@@ -20,5 +20,10 @@ pipeline {
                 docker rmi akashdakave05/angular-backend:latest'''
             }
         }
+        stage('Deployment') {
+            steps {
+                sh 'kubectl apply -f ./yaml/'
+            }
+        }
     }
 }
