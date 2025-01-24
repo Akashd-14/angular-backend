@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: backend
+  name: backend-app
+  labels:
+    app: angular-backend
+spec:
+  selector:
+    matchLabels:
+      app: angular-backend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: angular-backend
+    spec:
+      containers:
+        - name: backend-app
+          image: mayurwagh/com-backend:latest 
+          ports:
+            - containerPort: 8080
